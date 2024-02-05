@@ -1,0 +1,38 @@
+
+.getNote-div{
+    width: 220px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgb(235, 229, 229);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    margin: 20px;
+    padding: 5px;
+}
+
+.get-title-div{
+    width: 100%;
+    height: 30%;
+}
+
+.get-desc-div{
+    width: 100%;
+    height: 40%;
+}
+
+.get-icons-list{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.getNote-div:hover .get-icons-list {
+    opacity: 1;
+}
+
+

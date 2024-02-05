@@ -1,0 +1,12 @@
+.sidediv{
+    width: 65px;
+    height: 100%;
+    position: absolute;
+}
+
+.side-icons{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}

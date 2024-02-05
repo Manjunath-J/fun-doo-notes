@@ -1,0 +1,57 @@
+
+.box-signup{
+    align-content: center;
+    margin: 5% 23% 5% ;
+    border: 2px solid rgb(198, 194, 194);            /* top,[right,left],bottom */
+    max-width: 50%;
+    overflow: auto;
+}
+
+.left-box{
+    padding: 2% 3% 5%;
+    max-width: 50%;
+    align-items: left;
+    float: left;
+    /* display: inline; */
+}
+
+.right-box{
+    padding: 2% 5% 2%;
+    float: left;
+    max-width: 34%;
+    /* display: inline; */
+}
+
+
+.logo{
+    max-width: 85%;
+    display: flex;
+    align-items: center;
+    padding: 30% 12% 0% 0%;
+}
+
+.button{
+    max-width: 40%;
+    margin-right: 10%;
+}
+
+.button:last-child{
+    margin-right: 0%;
+}
+
+.signup-Fundo{
+    color:  goldenrod;
+}
+
+.input1{
+    max-width: 40%;
+}
+
+.long-input1{
+    max-width: 84%;
+}
+
+.logoinfo{
+    text-align: center;
+    padding: 0% 8% 2% 2%;
+}

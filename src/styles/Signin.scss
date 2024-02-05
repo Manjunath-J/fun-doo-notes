@@ -1,0 +1,74 @@
+
+// .box-signin{
+//     margin: 5% 35% 5% ;
+//     padding: 2% 3% 2%;
+//     border: 2px solid rgb(198, 194, 194);            /* top,[right,left],bottom */
+//     max-width: 25%;
+//     overflow: auto;
+// }
+
+
+// .button{
+//     max-width: 50%;
+// }
+
+// .button-1{
+//     max-width: 60%;
+// }
+
+
+// .fundoo,.text{
+//     text-align: center;
+// }
+
+// .fundoo{
+//     color:  goldenrod;  
+// }
+
+// .long-input{
+//     max-width: 90%;
+// }
+
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-signin{
+    min-height: 400px;
+    width: 375px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border: 2px solid rgb(198, 194, 194);
+    padding: 20px;  
+}
+
+.info-signin{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.button-div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-signin{
+    width: 90%;
+}
+
+.f-text,.u-text,.s-text{
+    text-align: center;
+    font-size: 20px;
+}
+.f-text{
+    color: goldenrod;
+    font-size: 25px;
+}

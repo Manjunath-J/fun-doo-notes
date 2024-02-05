@@ -1,0 +1,28 @@
+.sidebar{
+    padding-top: 20px;
+    margin-top: 55px;
+    border-top: 1px solid rgb(208, 208, 208);
+    position: relative;
+    div{
+        display: flex;
+    }
+}
+
+.sidelist{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidediv{
+    width: 50px;
+    height: 100%;
+}
+
+.side-icons{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
