@@ -1,0 +1,11 @@
+.trash-cnt{
+    display: flex;
+    justify-content: end;
+}
+
+.trash-note-div{
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}

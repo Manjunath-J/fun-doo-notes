@@ -35,6 +35,14 @@ export const getNote = async (endpoint)=>{
   }
 }
 
+export const update = async (endpoint,id,noteObj )=>{
+  try {
+    return await axios.put(baseURL + endpoint + id, noteObj, {headers:header});
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export const createNote = async (endpoint, noteObj)=>{
   try {
     return await axios.post(baseURL + endpoint, noteObj, {headers: header});

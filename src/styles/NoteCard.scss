@@ -29,10 +29,109 @@
     justify-content: space-between;
     opacity: 0;
     transition: opacity 0.3s ease;
+    cursor: pointer;
 }
 
 .getNote-div:hover .get-icons-list {
     opacity: 1;
+}
+
+.action-list{
+    width: 120px;
+    padding: 5px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid rgb(235, 229, 229);
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+.color-palate-cnt{
+    width: 280px;
+    height: 100px;
+    padding-left: 10px;
+    margin-top: 10px;
+    border: 1px solid rgb(235, 229, 229);
+    border-radius: 3px;    
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.color-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 200px;
+}
+.col1 {
+    @extend .color-btn;
+    background-color: #FFFFFF; 
+    border: 1px solid #e7e7bc;
+}
+
+.col2 {
+    @extend .color-btn;
+    background-color: #efbab6; 
+    border: 1px solid #e7e7bc;
+}
+
+.col3 {
+    @extend .color-btn;
+    background-color: #f69260; 
+    border: 1px solid #e7e7bc;
+}
+
+.col4 {
+    @extend .color-btn;
+    background-color: #ded68e; 
+    border: 1px solid #e7e7bc;
+}
+
+.col5 {
+    @extend .color-btn;
+    background-color: #8ebe6a; 
+    border: 1px solid #e7e7bc;
+}
+
+.col6 {
+    @extend .color-btn;
+    background-color: #199f7b; 
+    border: 1px solid #e7e7bc;
+}
+.col7 {
+    @extend .color-btn;
+    background-color: #1f88c5; 
+    border: 1px solid #e7e7bc;
+}
+.col8 {
+    @extend .color-btn;
+    background-color: #9ed3ef; 
+    border: 1px solid #e7e7bc;
+}
+.col9 {
+    @extend .color-btn;
+    background-color: #d296ea; 
+    border: 1px solid #e7e7bc;
+}
+.col10 {
+    @extend .color-btn;
+    background-color: #f69e87; 
+    border: 1px solid #e7e7bc;
+}
+.col11 {
+    @extend .color-btn;
+    background-color: #f1d892; 
+    border: 1px solid #e7e7bc;
+}
+.col12 {
+    @extend .color-btn;
+    background-color: #a3a3f6; 
+    border: 1px solid #e7e7bc;
 }
 
 
