@@ -13,7 +13,7 @@ import { update } from "../utils/HttpService";
 
 const EditNoteCnt = (props) => {
 
-  let { onClose, selectedValue, open, id, Title, Description, updateNotesList } = props;
+  let { onClose, selectedValue, open, id, Title, Description, color, updateNotesList } = props;
   let isArchieved;
 
   const [changeTitle, setChangeTitle] = useState(Title)
@@ -31,7 +31,7 @@ const EditNoteCnt = (props) => {
     console.log(changeDesc)
     update("/Notes/", id, {Title:changeTitle, Description:changeDesc, isArchieved:isArchieved});
     onClose(selectedValue);
-    updateNotesList({operation:"update", data:{Title:changeTitle, Description:changeDesc}})
+    updateNotesList({operation:"update", data:{_id:id, Title:changeTitle, Description:changeDesc, color:color}})
   };
 
   return (

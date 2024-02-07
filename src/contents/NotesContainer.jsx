@@ -16,20 +16,15 @@ function NotesContainer() {
   }, []);
 
   const updateNotesList = ({ operation, data }) => {
+    
     if (operation === "add") setNoteList([data, ...notesList]);
 
     else if (operation === "archive" || operation === "trash") {
       const filterList = notesList.filter((ele) => ele._id !== data);
       setNoteList(filterList);
     } 
-    else if (operation === "color") {
-      const filterList = notesList.map(ele => {
-        if(ele._id === data._id) return data
-        else return ele
-      })
-      setNoteList([...filterList]);
-    }
-    else if (operation === "update") {
+
+    else if (operation === "color" || operation === "update") {
       const filterList = notesList.map(ele => {
         if(ele._id === data._id) return data
         else return ele

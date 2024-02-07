@@ -24,20 +24,19 @@ const NoteCard = ({ ele, updateNotesList, deleted = false }) => {
   const [anchorColor, setAnchorColor] = useState(null);
   const openOption = Boolean(anchorMenu);
   const openColor = Boolean(anchorColor);
-  const color = openColor ? "simple-popper" : undefined;
-  const event = openOption ? "simple-popper" : undefined;
+  const colorPopper = openColor ? "simple-popper" : undefined;
+  const eventPopper = openOption ? "simple-popper" : undefined;
   const [open, setOpen] = useState(false);
   const [selectedValue, setSelectedValue] = useState();
-  let id = ele._id, Title = ele.Title, Description = ele.Description;
+  let id = ele._id, Title = ele.Title, Description = ele.Description, color = ele.color;
 
-  const handleMenu = (event) => {
-    console.log(event);
-    setAnchorMenu(anchorMenu ? null : event.currentTarget);
+
+  const handleMenu = (eventPopper) => {
+    setAnchorMenu(anchorMenu ? null : eventPopper.currentTarget);
   };
 
-  const handleColor = (color) => {
-    console.log(color);
-    setAnchorColor(anchorColor ? null : color.currentTarget);
+  const handleColor = (colorPopper) => {
+    setAnchorColor(anchorColor ? null : colorPopper.currentTarget);
   };
 
   const handleDelete = () => {
@@ -58,9 +57,6 @@ const NoteCard = ({ ele, updateNotesList, deleted = false }) => {
       let color = col;
       update("/Notes/", id, { color });
       updateNotesList({ operation: "color", data: { ...ele, color: col } });
-    }
-    if (action === "update") {
-      updateNotesList({ operation: "update", data: {ele} });
     }
   };
 
@@ -97,13 +93,13 @@ const NoteCard = ({ ele, updateNotesList, deleted = false }) => {
             <AddAlertOutlinedIcon />
             <PersonAddAltIcon />
             <ColorLensOutlinedIcon
-              aria-describedby={color}
+              aria-describedby={colorPopper}
               onClick={handleColor}
               className="color-btn"
             />
             <CollectionsOutlinedIcon />
             <ArchiveOutlinedIcon onClick={() => handleIconsClick("archive")} />
-            <MoreVertIcon aria-describedby={event} onClick={handleMenu} />
+            <MoreVertIcon aria-describedby={eventPopper} onClick={handleMenu} />
           </ListItemIcon>
         </div>
       )}
@@ -112,11 +108,11 @@ const NoteCard = ({ ele, updateNotesList, deleted = false }) => {
         selectedValue={selectedValue}
         open={open}
         onClose={handleClose}
-        id={id} Title={Title} Description={Description}
+        id={id} Title={Title} Description={Description} color={color}
         updateNotesList={updateNotesList}
       />
 
-      <Popper id={event} open={openOption} anchorEl={anchorMenu}>
+      <Popper id={eventPopper} open={openOption} anchorEl={anchorMenu}>
         <div className="action-list">
           <p onClick={() => handleIconsClick("trash")}>Delete Note</p>
           <p>Add Label</p>
@@ -127,7 +123,7 @@ const NoteCard = ({ ele, updateNotesList, deleted = false }) => {
         </div>
       </Popper>
 
-      <Popper id={color} open={openColor} anchorEl={anchorColor}>
+      <Popper id={colorPopper} open={openColor} anchorEl={anchorColor}>
         <div className="color-palate-cnt">
           <div
             className="col1"
