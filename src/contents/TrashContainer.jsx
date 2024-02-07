@@ -18,8 +18,7 @@ function TrashContainer(){
     if(operation==="trash") {
       const filterList = notesList.filter(ele => ele._id !== data)
       setNoteList(filterList)
-    }
-    
+    }   
   };
 
   return(
@@ -27,7 +26,7 @@ function TrashContainer(){
     <div className="trash-cnt">
         <div className="trash-note-div">
           {notesList.filter((ele)=> ele.isDeleted).map((ele) => (
-            <NoteCard ele={ele} updateNotesList={updateNotesList}/>
+            <NoteCard ele={ele} updateNotesList={updateNotesList} deleted={true}/>
           ))}
         </div>
       </div>

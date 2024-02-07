@@ -29,6 +29,14 @@ function NotesContainer() {
       })
       setNoteList([...filterList]);
     }
+    else if (operation === "update") {
+      const filterList = notesList.map(ele => {
+        if(ele._id === data._id) return data
+        else return ele
+      })
+      setNoteList([...filterList]);
+    }
+
   };
 
   return (

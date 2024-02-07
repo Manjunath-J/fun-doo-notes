@@ -16,16 +16,30 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 function CreateNote({updateNotesList}) {
 
   let Title, Description;
+  let color='';
+  let isArchieved= false;
+  let id;
 
   const [expand, setExpanded] = useState(false);
 
   const handleCloseClick = async (expanded) => {
-    if (expanded){
-       const res=await createNote("/Notes", { Title, Description });
+    if (expanded && (Title?.length || Description?.length )){
+       const res=await createNote("/Notes", { Title, Description,  isArchieved  });
+       id=res.data.data._id
       updateNotesList({operation:"add",data:res.data.data});
     }
     setExpanded(!expand);
   };
+
+  const handleArchive = () =>{
+    isArchieved=true;
+    handleCloseClick(true)
+    updateNotesList({ operation: "archive", data: id })
+  }
+
+  const handleColor = () => {
+    
+  }
 
   return (
     <>
@@ -53,7 +67,7 @@ function CreateNote({updateNotesList}) {
                   <PersonAddAltIcon />
                   <ColorLensOutlinedIcon />
                   <CollectionsOutlinedIcon />
-                  <ArchiveOutlinedIcon />
+                  <ArchiveOutlinedIcon onClick={handleArchive}/>
                   <MoreVertIcon />
                   <UndoIcon />
                   <RedoIcon />

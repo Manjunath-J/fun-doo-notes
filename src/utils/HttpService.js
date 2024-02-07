@@ -51,6 +51,14 @@ export const createNote = async (endpoint, noteObj)=>{
   }
 }
 
+export const deleteNote = async (endpoint, id)=>{
+  try {
+    return await axios.delete(baseURL + endpoint + id, {headers: header});
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export const isarchived = async (endpoint, id)=>{
   try {
     return await axios.get(baseURL + endpoint + id, {headers: header})
