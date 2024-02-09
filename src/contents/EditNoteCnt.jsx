@@ -37,13 +37,14 @@ const EditNoteCnt = (props) => {
   return (
     <div>
       <Dialog onClose={handleClose} open={open}>
-        <div className="edit-note">
-          <div className="open-take-note-cnt">
+        <div className="edit-note" style={{backgroundColor:color}}>
+          <div className="open-take-note-cnt" >
             <div className="title-div">
               <input
                 className="title"
                 type="text"
                 value={changeTitle}
+                style={{backgroundColor:color}}
                 onChange={(e) => {
                     setChangeTitle(e.target.value)
                 }}
@@ -54,6 +55,7 @@ const EditNoteCnt = (props) => {
                 className="take-a-note"
                 type="text"
                 value={changeDesc}
+                style={{backgroundColor:color}}
                 onChange={(e) => {
                     setChangeDesc(e.target.value)
                 }}
@@ -72,6 +74,7 @@ const EditNoteCnt = (props) => {
                 <button
                   className="close-button"
                   type="text"
+                  style={{backgroundColor:color}}
                   onClick={handleClose}
                 >
                   Close
