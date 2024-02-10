@@ -14,7 +14,7 @@ function App() {
     console.log(status)
     useEffect(() => {
       if (!status) {
-        navigate("/", { replace: true });
+        navigate("/signin", { replace: true });
       }
     }, [status]);
 
@@ -22,6 +22,7 @@ function App() {
   };
 
   const AppRoutes = createBrowserRouter([
+    
     {
       path: "/",
       element: <Signup />,

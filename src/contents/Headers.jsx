@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Header.scss";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
@@ -9,12 +9,30 @@ import Person2Icon from "@mui/icons-material/Person2";
 import AppsIcon from "@mui/icons-material/Apps";
 import keepLogo from "../assets/logo.png";
 import ListItemIcon from "@mui/material/ListItemIcon";
+import { useNavigate } from "react-router-dom";
+import Popper from "@mui/material/Popper";
+
 
 const Header = ({state, setState}) => {
+
+  const navigate = useNavigate();
+
+  const [anchorMenu, setAnchorMenu] = useState(null);
+  const openOption = Boolean(anchorMenu);
+  const userPopper = openOption ? "simple-popper" : undefined;
 
   const handleToggle = () => {
     setState(!state);
   }
+  const handleMenu = (userPopper) => {
+    setAnchorMenu(anchorMenu ? null : userPopper.currentTarget);
+  };
+
+  const handleSignOut = ()=>{
+    localStorage.clear();
+    navigate("/signin")
+  }
+
   
   return (
     <div className="header">
@@ -64,10 +82,17 @@ const Header = ({state, setState}) => {
             <AppsIcon />
           </div>
           <div>
-            <Person2Icon />
+            <Person2Icon aria-describedby={userPopper} onClick={handleMenu}/>
           </div>
         </ListItemIcon>
       </div>
+
+      <Popper id={userPopper} open={openOption} anchorEl={anchorMenu}>
+        <div className="signout">
+          <p onClick={handleSignOut}>Sign Out</p>
+        </div>
+      </Popper>
+
     </div>
   );
 };
